@@ -37,7 +37,7 @@ Follow these steps to get the project up and running:
 
 - Install PostgreSQL on your machine if you haven't already.
 - Create a new PostgreSQL database for the todo list application.
-- Update the `application.properties` file with the appropriate database configuration. Set the `spring.datasource.url`, `spring.datasource.username`, and `spring.datasource.password` properties accordingly.
+- Update the `application.yml` file with the appropriate database configuration. Set the `spring.datasource.url`, `spring.datasource.username`, and `spring.datasource.password` properties accordingly.
 
 3. Configure MailDev:
 
@@ -58,6 +58,7 @@ Follow these steps to get the project up and running:
   ```
 
 - MailDev will run on `http://localhost:1080`. You can access the web interface to view received emails.
+  ![Maildev Screenshot](readme-screenshots/3-maildev-ready.png)
 
 4. Build the project using Maven:
     ```
@@ -68,22 +69,27 @@ Follow these steps to get the project up and running:
    mvn spring-boot:run
     ```
 
-6. By now the todo list application shouldn't be accessible at `http://localhost:8080` because every endpoint will be secured instead you will be redirected to a login form but before login in you will need to register an user first.
+6. By now the todo list application shouldn't be accessible at `http://localhost:8080` because every endpoint will be secured, instead you will be redirected to a login form but before logging in you will need to register a user first.
+   ![Login Screenshot](readme-screenshots/6-login-form.png)
 
+7. To register create a POST request in Postman exactly like showed in the image (you will find the curl at the end of the readme) and if everything is set properly the response will be a confirmation token:
+    ![Todo List Screenshot](readme-screenshots/7-postman-registration-ss.png)
 
-7. To register create a POST request in Postman like showed in the image and if everything is set properly the response will be a confirmation token:
-    ![Todo List Screenshot](./Screenshots/postman-registration-ss.png)
-
-8. Next step will be to access to `http://localhost:1080/#/` where the maildev app will be running.
+8. Next step will be to access to `http://localhost:1080/#/` where the maildev app is running, you will find a new mail in your inbox.
+   ![Maildev Screenshot](./readme-screenshots/8-maildev-new-email.png)
 
 
 9. Click on the latest email received and after that click on the `Activate Now` link.
+   ![Maildev Screenshot](./readme-screenshots/9-maildev-email-link.png)
 
 
 10. Now go back to `http://localhost:8080` and introduce the email and password you registered previously via Postman.
+    ![Maildev Screenshot](./readme-screenshots/10-login-form-filled.png)
 
 
 11. Now you have access to the app.
+    ![Maildev Screenshot](./readme-screenshots/11-app.png)
+
 
 ## Project Structure
 
