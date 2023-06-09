@@ -24,7 +24,7 @@ Before running this project, ensure that you have the following prerequisites in
 - Apache Maven
 - PostgreSQL
 - MailDev (for testing the email verification)
-- Postman (for testing registration endpoin)
+- Postman (for testing registration endpoint)
 
 ## Getting Started
 
@@ -68,16 +68,16 @@ Follow these steps to get the project up and running:
    mvn spring-boot:run
     ```
 
-6. The todo list application will now be accessible at `http://localhost:8080` but every endpoint will be secured ayou will be redirected to a login form so you will need to register a user first.
+6. By now the todo list application shouldn't be accessible at `http://localhost:8080` because every endpoint will be secured instead you will be redirected to a login form but before login in you will need to register an user first.
 
 
-7. To register create a POST request in Postman like next one and if everything is set properly the response will be a confirmation token:
-    ![Todo List Screenshot](Screenshots/Captura de pantalla 2023-05-24 171940.png)
+7. To register create a POST request in Postman like showed in the image and if everything is set properly the response will be a confirmation token:
+    ![Todo List Screenshot](./Screenshots/postman-registration-ss.png)
 
 8. Next step will be to access to `http://localhost:1080/#/` where the maildev app will be running.
 
 
-9. Click on the latest email received and after that click on the link `Activate Now` link.
+9. Click on the latest email received and after that click on the `Activate Now` link.
 
 
 10. Now go back to `http://localhost:8080` and introduce the email and password you registered previously via Postman.
@@ -90,6 +90,7 @@ Follow these steps to get the project up and running:
 The project follows a standard Spring Boot project structure, with the main components as follows:
 
 - `src/main/java`: Contains the Java source code for the application.
+- `src/main/java/com/example/demo/app`: Contains the Java source code exclusively for the todo list application that is from a previous project of mine.
 - `src/main/resources`: Contains the application properties file, views, and static resources.
 
 
